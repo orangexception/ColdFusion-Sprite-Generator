@@ -1,0 +1,71 @@
+/* Bradley Wayne Moore */
+
+html {
+    background:		url( "http://hollow-night-558.herokuapp.com/assets/orange-stripes-with-texture.jpg" );
+	color:			#2a2a2a;
+	font-family:	Helvetica ,
+					Arial , 
+					sans-serif;					
+	
+}
+
+body {
+	margin:		0;
+	padding:	0;
+	
+}
+
+p {
+	max-width:	33em;
+	
+}
+
+.body-wrap {
+	max-width:	960px;
+	
+	margin:	auto;
+	
+}
+
+#content {
+	min-height:	10em;
+	
+	padding:	1em 0;
+	margin:		auto;
+	
+	background:	#f5f5f5;
+	border-top:	0.25em solid #2A2A2A;
+	
+}
+
+			
+#footer {
+	
+	padding:	1em 0;
+	margin:		auto;
+	
+	border-top:	2.5em solid #EDEDED;
+	
+}
+
+	#footer #name-and-copyright {
+		width:	16em; /* 320px / 16px/em = 20em - padding */
+		
+		margin:		auto;
+		padding:	3.5em 2em 1.5em;
+		
+		text-decoration:	none;
+		text-shadow:		0 1px 1px hsl( 21 , 0% , 80% );
+		
+	}
+
+		#footer #name-and-copyright #name {
+			font-size:		1.25em;
+			
+		}
+		
+
+		#footer #name-and-copyright #copyright {
+			font-size:		0.8em;
+			
+		}

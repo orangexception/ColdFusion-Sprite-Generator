@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sprite Generator</title>
+
+	<link	href=	"Default.css"
+			rel=	"stylesheet" 
+			type=	"text/css" />
+	
+</head>
+<body>
+	<div	id=	"content">
+		<div	class=	"body-wrap">
+			<h1>Sprite Generator</h1>
+			<p>
+				Creates a sprite image from a zip file of images.
+			
+			</p>
+		
+			<h2>Create sprite from Zip File</h2>
+			<h3>Basic</h3>
+			<p>
+				This is the simplest way to generate a sprite. Upload a zip file of images and receive a zip file in return.
+
+			</p>
+
+			<form	method=		"post"
+					action=		"/org/orangexception/sprite-generator/SpriteGenerator.cfc?method=generate"
+					enctype=	"multipart/form-data">
+
+				<label	for=	"ImagesZipFile">Zip File of Images</label>
+				<input	type=	"file" 
+						name=	"ImagesZipFile"
+						id=		"ImagesZipFile"
+						accept=	"zip" />
+				
+				<p>
+					<input	type=	"submit"
+							name=	"create"
+							value=	"Create Sprite" />
+
+				</p>
+
+			</form>
+
+			<h3>Customize Output</h3>
+			<p>
+				Additionally, you can pass a few more arguments to customize your sprite.
+
+			</p>
+
+			<form	method=		"post"
+					action=		"/org/orangexception/sprite-generator/SpriteGenerator.cfc?method=generate"
+					enctype=	"multipart/form-data">
+
+				<label	for=	"ImagesZipFile">Zip File of Images</label>
+				<input	type=	"file" 
+						name=	"ImagesZipFile"
+						id=		"ImagesZipFile"
+						accept=	"zip" />
+
+				<p>
+					<label	for=	"sName">Sprite Name</label>
+					<input	type=	"text" 
+							name=	"sName" />
+					
+				</p>
+
+				<p>
+					<label	for=	"bMinifyCSS">Minify CSS</label>
+					<input	type=	"checkbox" 
+							name=	"bMinifyCSS"
+							value=	"true" />
+					
+				</p>
+
+				<p>
+					<label	for=	"bOneRow">One Row</label>
+					<input	type=	"checkbox" 
+							name=	"bOneRow"
+							value=	"true" />
+					
+				</p>
+
+				<p>
+					<label	for=	"bOneColumn">One Column</label>
+					<input	type=	"checkbox" 
+							name=	"bOneColumn"
+							value=	"true" />
+					
+				</p>
+				
+				<p>
+					<input	type=	"submit"
+							name=	"create"
+							value=	"Create Sprite" />
+
+				</p>
+
+			</form>
+		
+			<h2>Create Sprite from Directory</h2>
+			<p>
+				This is more for use within an application. You can specify where to get files and put files.
+
+			</p>
+
+			<form	method=		"post"
+					action=		"/org/orangexception/sprite-generator/SpriteGenerator.cfc?method=generateFromDirectory"
+					enctype=	"multipart/form-data">
+				
+				<p>
+					<label	for=	"sImagePath">Sprite Images Path</label>
+					<input	type=	"text" 
+							name=	"sImagePath" />
+
+				</p>
+
+				<p>
+					<label	for=	"sImageStorageLocation">Sprite Storage Path</label>
+					<input	type=	"text" 
+							name=	"sStorageLocation" />
+
+				</p>
+				
+				<p>
+					<input	type=	"submit"
+							name=	"create"
+							value=	"Create Sprite" />
+
+				</p>
+
+			</form>
+		
+			<h3>Customize Output from Directory</h2>
+			<p>
+				Additionally, you can pass a few more arguments to customize your sprite.
+
+			</p>
+
+			<form	method=		"post"
+					action=		"/org/orangexception/sprite-generator/SpriteGenerator.cfc?method=generateFromDirectory"
+					enctype=	"multipart/form-data">
+				
+				<p>
+					<label	for=	"sImagePath">Sprite Images Path</label>
+					<input	type=	"text" 
+							name=	"sImagePath" />
+
+				</p>
+
+				<p>
+					<label	for=	"sImageStorageLocation">Sprite Image Storage Path</label>
+					<input	type=	"text" 
+							name=	"sImageStorageLocation" />
+
+				</p>
+
+				<p>
+					<label	for=	"sStylesheetStorageLocation">Sprite Stylesheet Storage Path</label>
+					<input	type=	"text" 
+							name=	"sStylesheetStorageLocation" />
+
+				</p>
+
+				<p>
+					<label	for=	"sName">Sprite Name</label>
+					<input	type=	"text" 
+							name=	"sName" />
+					
+				</p>
+
+				<p>
+					<label	for=	"bMinifyCSS">Minify CSS</label>
+					<input	type=	"checkbox" 
+							name=	"bMinifyCSS"
+							value=	"true" />
+					
+				</p>
+
+				<p>
+					<label	for=	"bOneRow">One Row</label>
+					<input	type=	"checkbox" 
+							name=	"bOneRow"
+							value=	"true" />
+					
+				</p>
+
+				<p>
+					<label	for=	"bOneColumn">One Column</label>
+					<input	type=	"checkbox" 
+							name=	"bOneColumn"
+							value=	"true" />
+					
+				</p>
+				
+				<p>
+					<input	type=	"submit"
+							name=	"create"
+							value=	"Create Sprite" />
+
+				</p>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	<div	id=	"footer">
+		<div 	class=	"body-wrap">
+			<div	id=	"name-and-copyright">
+				<div	id=	"name">Bradley Moore</div>
+		
+				Application Developer<br />
+				<a href="http://twitter.com/orangexception" title= "Twitter">@orange</a><a href="http://orangexception.com" title= "Web Site">xception.com</a>
+		
+				<p id= "copyright">&copy; Copyright 2011 Bradley Moore</p>
+				
+			</div>
+		
+			<div class= "clear"></div>
+		</div>
+		
+	</div>
+
+</body>
+	
+</html>
