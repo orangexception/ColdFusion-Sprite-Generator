@@ -162,6 +162,23 @@
 			<cfdirectory	directory=	"#sStorageLocation#"
 							action=		"list" 
 							name=		"qFiles" />
+
+			<cfquery	name=	"qFiles"
+						dbtype=	"query">
+			select
+				name
+
+			from
+				qFiles
+
+			where
+					name like '%.png'
+				or	name like '%.jpg'
+				or	name like '%.gif'
+				or	name like '%.jpeg'
+				or	name like '%.tiff'
+
+			</cfquery>
 			
 			<cfloop	query=	"qFiles">
 				<cfset	stResult.stFiles[ name ]=	"" />
