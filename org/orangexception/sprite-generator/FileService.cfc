@@ -163,6 +163,12 @@
 							action=		"list" 
 							name=		"qFiles" />
 
+			<cfif qFiles.recordcount EQ 1 AND qFiles.type EQ 'Dir'>
+				<cfdirectory	directory=	"#qFiles.directory#\#qFiles.name#"
+								action=		"list"
+								name=		"qFiles" />
+			</cfif>
+
 			<cfquery	name=	"qFiles"
 						dbtype=	"query">
 			select
