@@ -237,7 +237,42 @@ component	name=		"Sprite"
 		//	Write Sprite to Disk
 		ImageWrite( oSpriteImage , outputFile );
 
+		//	Create CSS
+		createCSS( argumentCollection=	arguments );
+
 		return	ExpandPath( outputFile );
+	}
+
+	function createCSS ( outputDirectory ) {
+		//	Localize Variables
+		var	row=	1;
+		var	column=	1;
+
+		var	css=	"";
+		var	cssID=	"";
+
+		var	offsetX=	0;
+		var	offsetY=	0;
+
+		//	Build CSS
+		savecontent	variable=	"css" {
+			include	"spriteCSS.cfm";
+
+		}
+
+		//	Output File
+		var	outputFile=	outputDirectory & "/" & name;
+
+		//	Bloated CSS
+		FileWrite( outputFile & ".css" , css );
+
+		//	Minified CSS
+		css=	REReplaceNoCase(	css ,
+									"(?s)\s|/\*.*?\*/" ,
+									"" ,
+									"all" );
+		FileWrite( outputFile & ".min.css" , css );
+
 	}
 
 	//	Accessor Overrides
